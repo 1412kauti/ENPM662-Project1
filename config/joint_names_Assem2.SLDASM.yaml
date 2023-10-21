@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'lidar_joint', 'right_rear_wheel_joint', 'left_rear_wheel_joint', 'right_axel_joint', 'right_front_wheel_joint', 'left_axel_joint', 'left_front_wheel_joint', ]
