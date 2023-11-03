@@ -1,0 +1,558 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="car" xmlns:xacro="http://ros.org/wiki/xacro">
+    # Add this before base link
+  <link name="dummy_link"></link>
+
+  # Add this after base link
+  <joint name="dummy_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <parent link="dummy_link"/>
+      <child link="base_link"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0940649956542752 0.0213488048129425 -0.0748044438957086"
+        rpy="0 0 0" />
+      <mass
+        value="130.703413258806" />
+      <inertia
+        ixx="9.48205817837114"
+        ixy="0.000348135237977105"
+        ixz="-0.00171562144853771"
+        iyy="10.198183829728"
+        iyz="1.39608345056877"
+        izz="4.24086781721853" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/base_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/base_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_rear_wheel">
+    <inertial>
+      <origin
+        xyz="-7.24420523567915E-15 -1.15463194561016E-14 -0.034198892964324"
+        rpy="0 0 0" />
+      <mass
+        value="2.20373338840704" />
+      <inertia
+        ixx="0.00679098454718218"
+        ixy="-4.18142860946568E-35"
+        ixz="-5.24562971261533E-17"
+        iyy="0.00679098454718218"
+        iyz="-3.12295182395203E-35"
+        izz="0.0118184008419413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_rear_wheel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_rear_wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rear_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.27189 0.21522 -0.20256"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_rear_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_rear_wheel">
+    <inertial>
+      <origin
+        xyz="1.38500322321988E-14 1.41275879883551E-14 0.0341988929643234"
+        rpy="0 0 0" />
+      <mass
+        value="2.20373338840704" />
+      <inertia
+        ixx="0.00679098454718218"
+        ixy="4.18142860946573E-35"
+        ixz="1.76778530324616E-17"
+        iyy="0.00679098454718218"
+        iyz="-3.12295182395203E-35"
+        izz="0.0118184008419413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_rear_wheel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_rear_wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rear_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.083712 0.21522 -0.20256"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_rear_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_axel">
+    <inertial>
+      <origin
+        xyz="-0.0215345008473979 -2.24145356386707E-07 0.0606191309689512"
+        rpy="0 0 0" />
+      <mass
+        value="0.343309335283973" />
+      <inertia
+        ixx="0.000302393389795013"
+        ixy="1.48907015707785E-09"
+        ixz="0.000116959884609056"
+        iyy="0.000593149376551672"
+        iyz="-1.66972818956823E-09"
+        izz="0.000404179411034381" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_axel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_axel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_axel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0051881 -0.29278 -0.12612"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_axel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_front_wheel">
+    <inertial>
+      <origin
+        xyz="9.93649607039515E-15 -1.18516307878735E-14 0.0341988929643197"
+        rpy="0 0 0" />
+      <mass
+        value="2.20373338840704" />
+      <inertia
+        ixx="0.00679098454718218"
+        ixy="4.18142860946574E-35"
+        ixz="1.73860005866729E-17"
+        iyy="0.00679098454718218"
+        iyz="-3.12295182395202E-35"
+        izz="0.0118184008419413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_front_wheel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/left_front_wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0889 0 0.076439"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="left_axel" />
+    <child
+      link="left_front_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_axel">
+    <inertial>
+      <origin
+        xyz="-0.0215345008473944 -2.24145353888705E-07 0.0606191309689502"
+        rpy="0 0 0" />
+      <mass
+        value="0.343309335283973" />
+      <inertia
+        ixx="0.000302393389795013"
+        ixy="1.48907015520137E-09"
+        ixz="0.000116959884609056"
+        iyy="0.000593149376551673"
+        iyz="-1.66972818885467E-09"
+        izz="0.000404179411034382" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_axel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_axel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_axel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.18299 -0.29278 -0.12612"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_axel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_front_wheel">
+    <inertial>
+      <origin
+        xyz="-7.04991620636974E-15 1.61259894326804E-14 -0.0341988929643213"
+        rpy="0 0 0" />
+      <mass
+        value="2.20373338840704" />
+      <inertia
+        ixx="0.00679098454718218"
+        ixy="-4.18142860946568E-35"
+        ixz="-5.27410503620083E-17"
+        iyy="0.00679098454718218"
+        iyz="-3.12295182395203E-35"
+        izz="0.0118184008419413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_front_wheel.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/right_front_wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0889 0 0.076439"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="right_axel" />
+    <child
+      link="right_front_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="3.88578058618805E-15 -3.21964677141295E-15 -0.0381059276546119"
+        rpy="0 0 0" />
+      <mass
+        value="2.47069918222367" />
+      <inertia
+        ixx="0.00757222005312619"
+        ixy="-9.78064878916653E-33"
+        ixz="-1.77719203468682E-17"
+        iyy="0.00757222005312619"
+        iyz="7.72732455860868E-35"
+        izz="0.0127540906436804" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/lidar.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://car/meshes/lidar.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="continuous">
+    <origin
+      xyz="-0.094088 0.19806 0.25488"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+   <ros2_control name="GazeboSystem" type="system">
+ <hardware>
+     <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+ </hardware>
+ # Velocity Controllers
+
+ <joint name="left_rear_wheel_joint">
+     <command_interface name="velocity">
+         <param name="min">-100.0</param>
+         <param name="max">100.0</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+<joint name="right_rear_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-100.0</param>
+        <param name="max">100.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+</joint>
+ <joint name="left_front_wheel_joint">
+     <command_interface name="velocity">
+         <param name="min">-100.0</param>
+         <param name="max">100.0</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+<joint name="right_front_wheel_joint">
+    <command_interface name="velocity">
+        <param name="min">-100.0</param>
+        <param name="max">100.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+</joint>
+<joint name="lidar_joint">
+    <command_interface name="velocity">
+        <param name="min">-100.0</param>
+        <param name="max">100.0</param>
+    </command_interface>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+</joint>
+
+# Position Controller
+ <joint name="left_axel_joint">
+     <command_interface name="position">
+         <param name="min">-0.6</param>
+         <param name="max">0.6</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+ <joint name="right_axel_joint">
+     <command_interface name="position">
+         <param name="min">-0.6</param>
+         <param name="max">0.6</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+ </ros2_control>
+
+ <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find car)/config/control.yaml</parameters>
+    </plugin>
+ </gazebo>
+
+
+  <gazebo reference="lidar">
+    <sensor name="lidar" type="ray">
+      <pose>0.0 0.0 0.0 0 0 0</pose>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.00000</resolution>
+            <min_angle>0.000000</min_angle>
+            <max_angle>6.280000</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120000</min>
+          <max>3.5</max>
+          <resolution>0.015000</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>add_name_of_your_link</frame_name>
+      </plugin>
+    </sensor>
+    </gazebo>
+
+    <gazebo reference="base_link">
+      <gravity>true</gravity>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <visualize>true</visualize>
+        <topic>__default_topic__</topic>
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+          <topicName>imu</topicName>
+          <bodyName>base_link</bodyName>
+          <updateRateHZ>10.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>base_link</frameName>
+          <initialOrientationAsReference>false</initialOrientationAsReference>
+        </plugin>
+        <pose>0 0 0 0 0 0</pose>
+      </sensor>
+    </gazebo>
+
+
+</robot>
