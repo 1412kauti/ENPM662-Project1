@@ -3,5 +3,4 @@
 # TO-DO
 
 - Fix Steering Teleop issue
-- Add updated sldwrks parts
 - Complete Readme.md
