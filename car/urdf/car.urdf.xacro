@@ -432,40 +432,40 @@
 
  <joint name="left_rear_wheel_joint">
      <command_interface name="velocity">
-         <param name="min">-100.0</param>
-         <param name="max">100.0</param>
+         <param name="min">-1000.0</param>
+         <param name="max">1000.0</param>
      </command_interface>
      <state_interface name="position"/>
      <state_interface name="velocity"/>
  </joint>
 <joint name="right_rear_wheel_joint">
     <command_interface name="velocity">
-        <param name="min">-100.0</param>
-        <param name="max">100.0</param>
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
     </command_interface>
     <state_interface name="position"/>
     <state_interface name="velocity"/>
 </joint>
  <joint name="left_front_wheel_joint">
      <command_interface name="velocity">
-         <param name="min">-100.0</param>
-         <param name="max">100.0</param>
+         <param name="min">-1000.0</param>
+         <param name="max">1000.0</param>
      </command_interface>
      <state_interface name="position"/>
      <state_interface name="velocity"/>
  </joint>
 <joint name="right_front_wheel_joint">
     <command_interface name="velocity">
-        <param name="min">-100.0</param>
-        <param name="max">100.0</param>
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
     </command_interface>
     <state_interface name="position"/>
     <state_interface name="velocity"/>
 </joint>
 <joint name="lidar_joint">
     <command_interface name="velocity">
-        <param name="min">-100.0</param>
-        <param name="max">100.0</param>
+        <param name="min">-1000.0</param>
+        <param name="max">1000.0</param>
     </command_interface>
     <state_interface name="position"/>
     <state_interface name="velocity"/>
@@ -474,16 +474,16 @@
 # Position Controller
  <joint name="left_axel_joint">
      <command_interface name="position">
-         <param name="min">-0.6</param>
-         <param name="max">0.6</param>
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
      </command_interface>
      <state_interface name="position"/>
      <state_interface name="velocity"/>
  </joint>
  <joint name="right_axel_joint">
      <command_interface name="position">
-         <param name="min">-0.6</param>
-         <param name="max">0.6</param>
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
      </command_interface>
      <state_interface name="position"/>
      <state_interface name="velocity"/>
@@ -528,7 +528,7 @@
           <remapping>~/out:=scan</remapping>
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
-        <frame_name>add_name_of_your_link</frame_name>
+        <frame_name>lidar</frame_name>
       </plugin>
     </sensor>
     </gazebo>

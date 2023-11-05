@@ -35,7 +35,7 @@ install(
 install(
 PROGRAMS
 launch/robot_description_publisher.py
-scripts/teleop_keyboard.py
+scripts/teleop_keyboard.py 
 DESTINATION lib/${PROJECT_NAME}
 )
 if(BUILD_TESTING)

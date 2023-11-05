@@ -43,7 +43,8 @@ class KeyboardControlNode(Node):
         Control Your Car!
         ---------------------------
         Moving around:
-            w
+        
+             w
         a    s    d
 
         o : lidar rotation start
@@ -81,9 +82,9 @@ class KeyboardControlNode(Node):
                 elif key == 'a':  # Left
                     steer_angle += ANG_VEL_STEP_SIZE
 
-                elif key == 'o':  # Left
+                elif key == 'o':  # Start Lidar
                     lidar_vel = 5.0
-                elif key == 'p':  # Left
+                elif key == 'p':  # Stop Lidar
                     lidar_vel = 0.0
 
                 if steer_angle>0.6:
@@ -91,16 +92,17 @@ class KeyboardControlNode(Node):
                 if steer_angle<-0.6:
                     steer_angle=-0.6
 
-                if linear_vel>100.0:
-                    linear_vel=100.0
-                if linear_vel<-100.0:
-                    linear_vel=-100.0
+                if linear_vel>20.0:
+                    linear_vel=20.0
+                if linear_vel<-20.0:
+                    linear_vel=-20.0
 
                 print("Steer Angle",steer_angle)
                 print("Linear Velocity",linear_vel)
+                print("Lidar Velocity",lidar_vel)
                 # Publish the twist message
                 wheel_velocities.data = [linear_vel,linear_vel,linear_vel,linear_vel]
-                joint_positions.data = [steer_angle,steer_angle,0.0,0.0]
+                joint_positions.data = [steer_angle,steer_angle]
                 lidar_velocities.data = [lidar_vel]
 
                 self.joint_position_pub.publish(joint_positions)
